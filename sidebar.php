@@ -1,11 +1,17 @@
-<div id="sidebar">
-  <h2 class="sidebartitle"><?php _e('Categories'); ?></h2>
-  <ul class="list-cat">
-    <?php wp_list_cats('sort_column=name&optioncount=1&hierarchical=0'); ?>
-  </ul>
-  
-  <h2 class="sidebartitle"><?php _e('Archives'); ?></h2>
-    <ul class="list-archives">
-      <?php wp_get_archives('type=monthly'); ?>
-    </ul>
-</div>
+<?php
+/**
+ * The sidebar containing the main widget area.
+ *
+ * If no active widgets in sidebar, let's hide it completely.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twelve
+ * @since Twenty Twelve 1.0
+ */
+?>
+
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+		<div id="secondary" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		</div><!-- #secondary -->
+	<?php endif; ?>
