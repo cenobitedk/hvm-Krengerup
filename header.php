@@ -34,22 +34,18 @@
 
 <body <?php body_class(); ?>>
 
-<div class="header-wrapper">
+<div class="header-wrapper clear">
 	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo (strlen(get_bloginfo( 'name', 'display' )) ? get_bloginfo( 'name', 'display' ) : "Hørvævsmuseet<span class=\"sub\">Krengerup</span>" ) ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</hgroup>
+
 		<div class="lang-select">
 			<?php echo qtrans_generateLanguageSelectCode('both'); ?>
 		</div>
 
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+		<?php get_search_form( TRUE ); ?>
 
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
@@ -58,14 +54,25 @@
 	</header><!-- #masthead -->
 </div>
 
+<div class="menu-wrapper">
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
+		<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+	</nav><!-- #site-navigation -->
+</div>
+
 <div id="page" class="hfeed site">
 	<div id="main" class="wrapper">
 
+		<? if (!is_front_page()) : ?>
 		<div id="submenu" class="">
 		<?php 
 		wp_nav_menu( array(
 	  		'theme_location' => 'primary',
-	  		'sub_menu' => true
+	  		'sub_menu' => true,
+	  		'menu_class' => 'submenu'
 		)); 
 		?>
 		</div>
+		<?php endif; ?>
