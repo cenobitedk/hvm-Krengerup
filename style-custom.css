@@ -95,6 +95,14 @@ body .site {
 	font-weight: normal;
 	padding-bottom: 0;
 }
+.main-navigation .sub-menu .current-menu-item > a, 
+.main-navigation .sub-menu .current-menu-ancestor > a, 
+.main-navigation .sub-menu .current_page_item > a, 
+.main-navigation .sub-menu .current_page_ancestor > a {
+	border-bottom: none;
+	padding-bottom: 2px;
+	text-decoration: underline;
+}
 .main-navigation .current-menu-item > a:hover, 
 .main-navigation .current-menu-ancestor > a:hover, 
 .main-navigation .current_page_item > a:hover, 
@@ -209,7 +217,7 @@ ul.submenu a {
 }
 
 ul.submenu .current-menu-item a:after {
-	content: "=>";
+	content: "···";
 	float: right;
 }
 
