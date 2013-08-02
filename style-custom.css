@@ -251,12 +251,12 @@ ul.submenu a {
 	/*margin-bottom: 1.714285714rem;*/
 }
 
-
-.template-front-page .widget-area .widget, 
-.template-front-page.two-sidebars .widget-area .front-widgets {
-	width: 50%;
-	padding: 10px;
+.template-front-page .widget-area .widget,
+.template-front-page .widget-area .widget:nth-child(even){
+	width: 33.333333333%;
+	padding: 5px;
 	box-sizing: border-box;
+	float: left;
 }
 
 
@@ -296,6 +296,10 @@ ul.submenu a {
 .front-widgets .widget.udstillinger article {
 	background: url(images/banner3_small.jpg) center center no-repeat;
 }
+.front-widgets .widget.find-vej article {
+	background: url(images/banner4_kort_small.jpg) center bottom no-repeat;
+}
+
 
 @media screen and (max-width: 599px) {
 	#submenu,
@@ -325,7 +329,7 @@ ul.submenu a {
 		width: 77%;
 	}
 
-	.template-front-page .widget-area .widget:nth-child(even), 
+	/*.template-front-page .widget-area .widget:nth-child(even), */
 	.template-front-page.two-sidebars .widget-area .front-widgets + .front-widgets {
 		width: 50%;
 	}
@@ -351,7 +355,7 @@ ul.submenu a {
 	}
 
 
-	.template-front-page .widget-area .widget:nth-child(even), 
+	/*.template-front-page .widget-area .widget:nth-child(even), */
 	.template-front-page.two-sidebars .widget-area .front-widgets + .front-widgets {
 		width: 50%;
 	}
@@ -363,7 +367,9 @@ ul.submenu a {
 	width: auto;
 	float: none;
 }
-
+.home #secondary {
+	padding: 5px;
+}
 
 footer[role="contentinfo"] {
 	border: none;
