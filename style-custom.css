@@ -351,9 +351,21 @@ ul.submenu a {
 	line-height: 1.5;
 }
 
+.widget-area .widget p {
+	margin-bottom: 5px;
+}
 
+.widget-area .widget li {
+	margin-bottom: 25px;
+}
 
-
+.widget-area .widget_recent_entries li strong:after {
+	content: "–";
+	padding: 5px;
+}
+.widget-area .widget_recent_entries li p {
+	padding-left: 0;
+}
 
 /*****************************/
 /* FRONTPAGE
