@@ -27,7 +27,8 @@ a {
 a:hover,
 .comments-link a:hover, 
 .entry-meta a:hover,
-footer[role="contentinfo"] a:hover {
+footer[role="contentinfo"] a:hover,
+.template-front-page .widget-area .widget li a:hover {
 	color: #585;
 }
 
