@@ -16,8 +16,6 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 
-		<?php if ( function_exists( 'soliloquy_slider' ) ) soliloquy_slider( '158' ); ?>
-
 		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
