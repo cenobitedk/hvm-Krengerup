@@ -167,6 +167,10 @@ body .site {
 	padding: 0 10px;
 }
 
+.main-navigation li.wide ul li a {
+	width: 280px;
+}
+
 
 
 
