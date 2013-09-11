@@ -509,3 +509,12 @@ function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
   }
 }
 
+
+function enable_more_buttons($buttons) {
+	$buttons[] = 'hr';
+  return $buttons;
+}
+add_filter("mce_buttons", "enable_more_buttons");
+//add_filter("mce_buttons_2", "enable_more_buttons"); // add to second row
+//add_filter("mce_buttons_3", "enable_more_buttons"); // add to third row
+
