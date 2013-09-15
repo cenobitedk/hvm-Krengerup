@@ -337,7 +337,11 @@ ul.submenu a {
 	padding-right: 5px;
 }
 
-
+.site-content hr {
+	margin: 0;
+	height: 0;
+	clear: both;
+}
 
 
 
