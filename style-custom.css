@@ -56,8 +56,9 @@ body .site {
 	float: left;
 }
 .site-header hgroup:before {
-	content: "db";
-	margin: 0 3px;
+	content: url("images/logo_icon_24.png");
+	margin: 6px 4px -6px -20px;
+	float: left;
 }
 
 
