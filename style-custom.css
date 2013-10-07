@@ -308,6 +308,12 @@ ul.submenu a {
 	text-decoration: none;
 }
 
+ul.submenu ul.submenu {
+	padding-top: 10px;
+	border-top: 1px solid #ccc;
+	margin-top: 10px;
+	padding-left: 15px;
+}
 
 
 /*****************************/
