@@ -290,7 +290,7 @@ header .lang-select li.active a {
 /*****************************/
 
 #submenu > * {
-	padding-bottom: 100px;
+	/*padding-bottom: 100px;*/
 	/*border: 1px solid #e0e0e0;*/
 }
 
@@ -309,11 +309,16 @@ ul.submenu a {
 	text-decoration: none;
 }
 
-ul.submenu ul.submenu {
+ul.submenu [class*="current"] > a {
+	font-weight: bold;
+}
+
+ul.submenu ul.sub-menu {
 	padding-top: 10px;
 	border-top: 1px solid #ccc;
 	margin-top: 10px;
 	padding-left: 15px;
+	font-size: 90%;
 }
 
 
