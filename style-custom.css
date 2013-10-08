@@ -388,6 +388,11 @@ ul.submenu ul.sub-menu {
 	padding-left: 0;
 }
 
+.widget-area .widget_sp_image img {
+	border-radius: 0;
+	box-shadow: none;
+}
+
 /*****************************/
 /* FRONTPAGE
 /*****************************/
@@ -484,10 +489,7 @@ ul.submenu ul.sub-menu {
 .template-front-page .widget-area .first .widget.logo {
 	text-align: center;
 }
-.template-front-page .widget-area .first .widget.logo img {
-	border-radius: 0;
-	box-shadow: none;
-}
+
 
 
 /*****************************/
