@@ -481,8 +481,12 @@ ul.submenu ul.sub-menu {
 	font-size: 14px;
 }
 
-.template-front-page .widget-area .first .widget.widget-last {
+.template-front-page .widget-area .first .widget.logo {
 	text-align: center;
+}
+.template-front-page .widget-area .first .widget.logo img {
+	border-radius: 0;
+	box-shadow: none;
 }
 
 
