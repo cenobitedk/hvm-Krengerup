@@ -535,12 +535,22 @@ ul.submenu ul.sub-menu {
 
 footer[role="contentinfo"] {
 	border: none;
-	padding: 10px 10px 200px;
+	padding: 10px 10px 300px;
 }
 
 footer[role="contentinfo"] > * {
 	padding: 10px;
 	box-sizing: border-box;
+}
+
+/*****************************/
+/* FOOTER-WIDGETS
+/*****************************/
+
+#footer-widgets {
+	border: none;
+	padding-top: 0;
+	margin: 0;
 }
 
 
