@@ -518,9 +518,6 @@ ul.submenu ul.sub-menu {
 	display: none;
 }
 
-.front-widgets .widget.contact article {
-	background: url(images/banner1_small.jpg) center center no-repeat;
-}
 .front-widgets .widget.nyheder article {
 	background: url(images/banner2_small.jpg) center center no-repeat;
 }
@@ -530,7 +527,10 @@ ul.submenu ul.sub-menu {
 .front-widgets .widget.find-vej article {
 	background: url(images/banner4_kort_small.jpg) center bottom no-repeat;
 }
-
+.front-widgets .widget.contact article,
+.front-widgets .widget.kontakt article {
+	background: url(images/banner1_small.jpg) center center no-repeat;
+}
 
 
 
