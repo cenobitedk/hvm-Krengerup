@@ -505,6 +505,9 @@ ul.submenu ul.sub-menu {
 	border-top: 1px solid #ccc;
 }
 
+.template-front-page .widget-area .second .widget h1 {
+	padding-top: 10px;
+}
 .template-front-page .widget-area .second .widget p {
 	padding-left: 10px;
 }
