@@ -440,7 +440,9 @@ ul.submenu ul.sub-menu {
 .template-front-page .widget-area .widget:nth-child(even){
 	width: 33.333333333%;
 	padding: 10px;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
 	float: left;
 }
 
