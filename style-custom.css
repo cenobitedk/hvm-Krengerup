@@ -383,6 +383,11 @@ ul.submenu ul.sub-menu {
 	box-shadow: none;
 }
 
+.widget-area .widget.logo img {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 /*****************************/
 /* FRONTPAGE
 /*****************************/
@@ -481,7 +486,10 @@ ul.submenu ul.sub-menu {
 .template-front-page .widget-area .first .widget.logo {
 	text-align: center;
 }
-
+.template-front-page .widget-area .first .widget.logo img {
+	max-height: 150px;
+	width: auto;
+}
 
 
 /*****************************/
@@ -534,11 +542,10 @@ ul.submenu ul.sub-menu {
 
 footer[role="contentinfo"] {
 	border: none;
-	padding: 10px 10px 300px;
+	padding: 10px 10px 30px;
 }
 
 footer[role="contentinfo"] > * {
-	padding: 10px;
 	box-sizing: border-box;
 }
 
@@ -548,9 +555,50 @@ footer[role="contentinfo"] > * {
 
 #footer-widgets {
 	border: none;
-	padding-top: 0;
+	padding-top: 10px;
 	margin: 0;
+	clear: both;
+	float: none;
+	width: auto;
 }
+
+#footer-widgets:before,
+#footer-widgets:after {
+	display: table;
+	content: "";
+}
+
+#footer-widgets .widget {
+	float: left;
+	width: 33.3333%;
+	clear: none;
+	box-sizing: border-box;
+}
+
+#footer-widgets .widget:first-child {
+	text-align: right;
+}
+
+#footer-widgets .widget:nth-child(even) {
+	float: right;
+}
+
+#footer-widgets .widget_sp_image img {
+	margin-top: 0;
+}
+
+#footer-widgets .widget.logo img {
+	max-height: 150px;
+	width: auto;
+}
+
+
+
+
+/* -------------------------------------- */
+/* --------------  SIZES  --------------- */
+/* -------------------------------------- */
+
 
 
 
@@ -629,8 +677,20 @@ footer[role="contentinfo"] > * {
 		max-height: 50px;
 		width: auto;
 	}
-	
 
+	#footer-widgets .widget {
+		width: 50%;
+		padding: 0 10px;
+	}
+
+	#footer-widgets .widget.logo {
+		width: 100%;
+		padding-top: 10px;
+	}
+	#footer-widgets .widget.logo img {
+		max-height: 100px;
+		width: auto;
+	}
 }
 
 
@@ -666,10 +726,26 @@ footer[role="contentinfo"] > * {
 		width: 50%;
 	}
 
-	.template-front-page .widget-area .first .widget.widget-last {
+	.template-front-page .widget-area .first .widget.logo {
 		width: 100%;
 	}
+	.template-front-page .widget-area .first .widget.logo img {
+		max-height: 100px;
+		width: auto;
+	}
 
+	#footer-widgets .widget {
+		width: 50%;
+		padding: 0 10px;
+	}
+	#footer-widgets .widget.logo {
+		width: 100%;
+		padding-top: 10px;
+	}
+	#footer-widgets .widget.logo img {
+		max-height: 120px;
+		width: auto;
+	}
 }
 
 @media screen and (min-width: 769px) {
