@@ -41,6 +41,14 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 
+		<div id="toggle-buttons" class="toggle-buttons">
+			<ul>
+				<li><a href="#" class="language"><?php _e('Language', 'twentytwelve'); ?></a></li>
+				<li><a href="#" class="menu"><?php _e('Menu', 'twentytwelve'); ?></a></li>
+				<li><a href="#" class="search"><?php _e('Search', 'twentytwelve'); ?></a></li>
+			</ul>
+		</div>
+		
 		<div class="lang-select">
 			<?php echo qtrans_generateLanguageSelectCode('both'); ?>
 		</div>
@@ -56,7 +64,7 @@
 
 <div class="menu-wrapper">
 	<nav id="site-navigation" class="main-navigation" role="navigation">
-		<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
+		<!-- <h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3> -->
 		<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 	</nav><!-- #site-navigation -->
