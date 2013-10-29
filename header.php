@@ -43,9 +43,9 @@
 
 		<div id="toggle-buttons" class="toggle-buttons">
 			<ul>
-				<li><a href="#" class="language"><?php _e('Language', 'twentytwelve'); ?></a></li>
-				<li><a href="#" class="menu"><?php _e('Menu', 'twentytwelve'); ?></a></li>
-				<li><a href="#" class="search"><?php _e('Search', 'twentytwelve'); ?></a></li>
+				<li><a href="#" class="language entypo-globe"><?php _e('Language', 'twentytwelve'); ?></a></li>
+				<li><a href="#" class="menu entypo-menu"><?php _e('Menu', 'twentytwelve'); ?></a></li>
+				<li><a href="#" class="search entypo-search"><?php _e('Search', 'twentytwelve'); ?></a></li>
 			</ul>
 		</div>
 		
