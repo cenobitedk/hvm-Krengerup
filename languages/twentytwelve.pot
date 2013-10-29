@@ -296,6 +296,10 @@ msgstr ""
 msgid "Next &rarr;"
 msgstr ""
 
+#: index.php:23 content.php:11
+msgid "News"
+msgstr ""
+
 #: index.php:38
 msgid "No posts to display"
 msgstr ""
