@@ -47,10 +47,11 @@
 		var a = submenus[i-1].previousElementSibling;
 		if (a.tagName == 'A') {
 			if (a.className.indexOf('toggler') == -1) {
-				//a.className += ' toggler';
+				// a.className += ' entypo-submenu-list';
 				var e = document.createElement('a');
 				e.setAttribute('href', '#');
-				e.setAttribute('class', 'toggler entypo-down-open-big');
+				// e.setAttribute('class', 'toggler entypo-down-open-big');
+				e.setAttribute('class', 'toggler entypo-list');
 				e.setAttribute('data-target', i-1);
 				// e.innerText = '---';
 				a.parentNode.insertBefore(e, submenus[i-1]);
@@ -86,7 +87,13 @@
 		return false;
 	}
 
+	// var page_submenu = document.getElementById('submenu');
+	// var btn_page_submenu = page_submenu.getElementsByClassName('toggler')[0];
 
+	// btn_page_submenu.onclick = function() {
+	// 	toggle(this, page_submenu);
+	// 	return false;	
+	// }
 
 
 

@@ -75,6 +75,7 @@
 
 		<? if (!is_front_page()) : ?>
 		<div id="submenu" class="">
+			<a href="#" class="toggler entypo-list"></a>
 		<?php 
 		wp_nav_menu( array(
 	  		'theme_location' => 'primary',
