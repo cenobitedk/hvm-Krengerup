@@ -5,7 +5,8 @@
  */
 ( function() {
 	var nav = document.getElementById('site-navigation'), 
-	header = document.getElementById('masthead'), menu, search, language;
+	header = document.getElementById('masthead'), 
+	menu, search, language, submenus;
 	var buttons = document.getElementById('toggle-buttons'), btn_menu, btn_search, btn_lang;
 	if (!nav || !buttons)
 		return;
@@ -26,19 +27,6 @@
 		return;
 	}
 
-	btn_menu.onclick = function() {
-		if ( -1 == menu.className.indexOf( 'nav-menu' ) )
-			menu.className = 'nav-menu';
-		toggle(this, menu);
-	};
-
-	btn_search.onclick = function() {
-		toggle(this, search);
-	}
-
-	btn_lang.onclick = function() {
-		toggle(this, language);
-	}
 
 	var toggle = function (btn, element) {
 		if ( -1 != btn.className.indexOf( 'toggled-on' ) ) {
@@ -49,5 +37,58 @@
 			element.className += ' toggled-on';
 		}		
 	}
+
+	// add togglers
+	submenus = menu.getElementsByClassName('sub-menu');
+	var togglers = [];
+	var i = submenus.length;
+	while (i) {
+		var p = submenus[i-1].parentNode;
+		var a = submenus[i-1].previousElementSibling;
+		if (a.tagName == 'A') {
+			if (a.className.indexOf('toggler') == -1) {
+				//a.className += ' toggler';
+				var e = document.createElement('a');
+				e.setAttribute('href', '#');
+				e.setAttribute('class', 'toggler entypo-down-open-big');
+				e.setAttribute('data-target', i-1);
+				// e.innerText = '---';
+				a.parentNode.insertBefore(e, submenus[i-1]);
+				e.onclick = function() {
+					var x = this.getAttribute('data-target');
+					toggle(this, submenus[x]);
+					return false;
+				};
+				if (p.className.indexOf('current-page-ancestor') != -1) {
+					//var x = e.getAttribute('data-target');
+					toggle(e, submenus[i-1]);	
+				}
+			}
+		}
+		i--;
+	}
+
+
+	btn_menu.onclick = function() {
+		if ( -1 == menu.className.indexOf( 'nav-menu' ) )
+			menu.className = 'nav-menu';
+		toggle(this, menu);
+		return false;
+	};
+
+	btn_search.onclick = function() {
+		toggle(this, search);
+		return false;
+	}
+
+	btn_lang.onclick = function() {
+		toggle(this, language);
+		return false;
+	}
+
+
+
+
+
 
 } )();
