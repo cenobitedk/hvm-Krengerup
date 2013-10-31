@@ -80,12 +80,8 @@ body .site {
 }
 
 .site-header h2 {
-	font-size: 18px;
+	font-size: 17px;
 }
-/*.site-header h2:before {
-	content: "|";
-	margin: 0 5px;
-} */
 
 .site-header h1 a, 
 .site-header h2 a {
@@ -1024,7 +1020,20 @@ footer[role="contentinfo"] > * {
 		font-size: 20px;
 	}
 	.site-header h2 {
-		font-size: 16px;
+		font-size: 15px;
+	}
+
+	#searchform {
+		margin: 7px 0;
+	}
+	#searchform input {
+		padding: 2px 5px;
+	}
+	#searchform input#searchsubmit {
+		padding: 2px 8px;
+	}
+	#searchform input#s {
+		width: 110px;
 	}
 
 
