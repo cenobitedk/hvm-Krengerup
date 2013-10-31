@@ -181,7 +181,7 @@ body .site {
 	color: #ffe;
 	font-family: 'Kreon', serif;
 	font-size: 14px;
-	line-height: 2.2;
+	line-height: 30px;
 	padding: 0 10px;
 	padding-bottom: 2px;
 }
@@ -878,12 +878,17 @@ footer[role="contentinfo"] > * {
 		max-width: 960px; 
 	}
 
+	.menu-wrapper {
+		background-image: url(images/menu_border_bg.png);
+		background-position: top center;
+		background-repeat: repeat;
+	}
+
 	header .toggle-buttons,
 	.main-navigation a.toggler,
 	.main-navigation a + ul.toggled-on {
 		display: none;
 	}
-
 
 	.main-navigation ul.nav-menu, 
 	.main-navigation div.nav-menu > ul {
