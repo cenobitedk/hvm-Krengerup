@@ -27,65 +27,64 @@
 		return;
 	}
 
-
+	// list of active buttons, used for buttons with the single attribute.
 	var active_togglers = [];
 
 	var toggle = function (btn, element, single) {
+		var pair = {
+			'btn': btn,
+			'element': element
+		};
 
-		var sw = function (btn, element) {
-			if ( -1 != btn.className.indexOf( 'toggled-on' ) ) {
-				btn.className = btn.className.replace( ' toggled-on', '' );
-				element.className = element.className.replace( ' toggled-on', '' );
-			} else {
-				btn.className += ' toggled-on';
-				element.className += ' toggled-on';
-			}
-		}
-
+		// hide other buttons in the single group
 		if (single) {
 			var n = active_togglers.length;
 			while (n) {
-				sw(active_togglers[n-1].btn, active_togglers[n-1].element);
+				// don't toggle itself, this would cause double toggling.
+				if (pair.btn != active_togglers[n-1].btn) {
+					setTimeout(toggle, 2, active_togglers[n-1].btn, active_togglers[n-1].element);
+				}
 				n--;
 			}
-
+			// repopulate list
 			active_togglers.length = 0;
-			active_togglers.push({
-				'btn': btn,
-				'element': element
-			});
+			active_togglers.push(pair);
 		}
 
-		console.log(active_togglers);
-
-		sw(btn, element);
+		// the toggle functionality
+		if ( -1 != btn.className.indexOf( 'toggled-on' ) ) {
+			btn.className = btn.className.replace( ' toggled-on', '' );
+			element.className = element.className.replace( ' toggled-on', '' );
+			if (active_togglers.indexOf(pair) != -1) {
+				active_togglers.splice(active_togglers.indexOf(pair), 1);
+			}
+		} else {
+			btn.className += ' toggled-on';
+			element.className += ' toggled-on';
+		}
 
 	}
 
 	// add togglers
 	submenus = menu.getElementsByClassName('sub-menu');
-	var togglers = [];
 	var i = submenus.length;
 	while (i) {
 		var p = submenus[i-1].parentNode;
 		var a = submenus[i-1].previousElementSibling;
 		if (a.tagName == 'A') {
 			if (a.className.indexOf('toggler') == -1) {
-				// a.className += ' entypo-submenu-list';
 				var e = document.createElement('a');
 				e.setAttribute('href', '#');
-				// e.setAttribute('class', 'toggler entypo-down-open-big');
 				e.setAttribute('class', 'toggler entypo-list');
 				e.setAttribute('data-target', i-1);
-				// e.innerText = '---';
 				a.parentNode.insertBefore(e, submenus[i-1]);
 				e.onclick = function() {
 					var x = this.getAttribute('data-target');
 					toggle(this, submenus[x]);
 					return false;
 				};
+				// open/expand ancestors of the current page
 				if (p.className.indexOf('current-page-ancestor') != -1) {
-					//var x = e.getAttribute('data-target');
 					toggle(e, submenus[i-1]);	
 				}
 			}
