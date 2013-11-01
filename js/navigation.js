@@ -28,14 +28,38 @@
 	}
 
 
-	var toggle = function (btn, element) {
-		if ( -1 != btn.className.indexOf( 'toggled-on' ) ) {
-			btn.className = btn.className.replace( ' toggled-on', '' );
-			element.className = element.className.replace( ' toggled-on', '' );
-		} else {
-			btn.className += ' toggled-on';
-			element.className += ' toggled-on';
-		}		
+	var active_togglers = [];
+
+	var toggle = function (btn, element, single) {
+
+		var sw = function (btn, element) {
+			if ( -1 != btn.className.indexOf( 'toggled-on' ) ) {
+				btn.className = btn.className.replace( ' toggled-on', '' );
+				element.className = element.className.replace( ' toggled-on', '' );
+			} else {
+				btn.className += ' toggled-on';
+				element.className += ' toggled-on';
+			}
+		}
+
+		if (single) {
+			var n = active_togglers.length;
+			while (n) {
+				sw(active_togglers[n-1].btn, active_togglers[n-1].element);
+				n--;
+			}
+
+			active_togglers.length = 0;
+			active_togglers.push({
+				'btn': btn,
+				'element': element
+			});
+		}
+
+		console.log(active_togglers);
+
+		sw(btn, element);
+
 	}
 
 	// add togglers
@@ -73,17 +97,17 @@
 	btn_menu.onclick = function() {
 		if ( -1 == menu.className.indexOf( 'nav-menu' ) )
 			menu.className = 'nav-menu';
-		toggle(this, menu);
+		toggle(this, menu, true);
 		return false;
 	};
 
 	btn_search.onclick = function() {
-		toggle(this, search);
+		toggle(this, search, true);
 		return false;
 	}
 
 	btn_lang.onclick = function() {
-		toggle(this, language);
+		toggle(this, language, true);
 		return false;
 	}
 
