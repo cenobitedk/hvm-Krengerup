@@ -11,15 +11,15 @@
 	if (!nav || !buttons)
 		return;
 
-	btn_menu = buttons.getElementsByClassName('menu')[0];
-	btn_search = buttons.getElementsByClassName('search')[0];
-	btn_lang = buttons.getElementsByClassName('language')[0];
+	btn_menu = buttons.querySelectorAll('.menu')[0];
+	btn_search = buttons.querySelectorAll('.search')[0];
+	btn_lang = buttons.querySelectorAll('.language')[0];
 	if (!btn_menu || !btn_search || !btn_lang)
 		return;
 
 	menu = nav.getElementsByTagName('ul')[0];
 	search = document.getElementById('searchform');
-	language = header.getElementsByClassName('lang-select')[0];
+	language = header.querySelectorAll('.lang-select')[0];
 
 	// Hide button if menu is missing or empty.
 	if ( ! menu || ! menu.childNodes.length ) {
@@ -66,12 +66,12 @@
 	}
 
 	// add togglers
-	submenus = menu.getElementsByClassName('sub-menu');
+	submenus = menu.querySelectorAll('.sub-menu');
 	var i = submenus.length;
 	while (i) {
 		var p = submenus[i-1].parentNode;
 		var a = submenus[i-1].previousElementSibling;
-		if (a.tagName == 'A') {
+		if (a && a.tagName == 'A') {
 			if (a.className.indexOf('toggler') == -1) {
 				var e = document.createElement('a');
 				e.setAttribute('href', '#');
