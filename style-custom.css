@@ -38,9 +38,6 @@ footer[role="contentinfo"] a:hover,
 	color: #585;
 }
 
-
-
-
 .header-wrapper,
 .footer-wrapper {
 	background-color: #bdb69c;
@@ -260,6 +257,8 @@ header .lang-select li.active a {
 
 #main {
 	padding: 10px;
+	min-height: 600px;
+
 }
 
 #submenu,
@@ -526,6 +525,10 @@ ul.submenu [class*="current"] > a {
 	padding-left: 10px;
 }
 
+.template-front-page .widget-area .second .fpw-featured-image {
+	display: none;
+}
+
 .template-front-page .widget-area .second .widget,
 .template-front-page .widget-area .second .widget:nth-child(even) {
 	width: 25%;
@@ -558,7 +561,7 @@ ul.submenu [class*="current"] > a {
 
 footer[role="contentinfo"] {
 	border: none;
-	padding: 10px 10px 30px;
+	padding: 10px 10px 60px;
 }
 
 footer[role="contentinfo"] > * {
@@ -862,6 +865,11 @@ footer[role="contentinfo"] > * {
 		max-height: 100px;
 		width: auto;
 	}
+
+	footer[role="contentinfo"] {
+		padding-bottom: 30px;
+	}
+
 }
 
 
