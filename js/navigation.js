@@ -71,7 +71,7 @@
 	while (i) {
 		var p = submenus[i-1].parentNode;
 		var a = submenus[i-1].previousElementSibling;
-		if (a.tagName == 'A') {
+		if (a && a.tagName == 'A') {
 			if (a.className.indexOf('toggler') == -1) {
 				var e = document.createElement('a');
 				e.setAttribute('href', '#');
