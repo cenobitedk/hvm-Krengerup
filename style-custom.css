@@ -390,6 +390,14 @@ ul.submenu [class*="current"] > a {
 	margin-bottom: 25px;
 }
 
+.widget-area .widget li {
+	margin-bottom: 25px;
+}
+}
+.widget-area .widget_recent_entries li p {
+	padding-left: 0;
+}
+
 .widget-area .widget_recent_entries li strong:after {
 	content: "–";
 	padding: 5px;
@@ -691,12 +699,10 @@ footer[role="contentinfo"] > * {
 	}
 
 	header .lang-select,
-	header #lang_sel_list,
 	header #searchform {
 		display: none;
 	}
 	header .lang-select.toggled-on,
-	header #lang_sel_list.toggled-on,
 	header #searchform.toggled-on,
 	.main-navigation ul.nav-menu.toggled-on {
 		display: block;
@@ -989,6 +995,8 @@ footer[role="contentinfo"] > * {
 
 }
 
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
 	

@@ -19,7 +19,7 @@
 
 	menu = nav.getElementsByTagName('ul')[0];
 	search = document.getElementById('searchform');
-	language = header.querySelectorAll('.lang-select')[0] || document.getElementById('lang_sel_list');
+	language = header.querySelectorAll('.lang-select')[0];
 
 	// Hide button if menu is missing or empty.
 	if ( ! menu || ! menu.childNodes.length ) {
