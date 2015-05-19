@@ -18,6 +18,11 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
+		
+		<?php if (is_home()) : ?>
+			<h1 class="news-title"><?php _e('News', 'twentytwelve'); ?></h1>
+		<?php endif; ?>
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

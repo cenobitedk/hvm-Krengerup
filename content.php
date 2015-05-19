@@ -7,7 +7,10 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-
+	<?php if ( is_single() ) : ?>
+	<h1 class="news-title"><?php _e('News', 'twentytwelve'); ?></h1>
+	<?php endif; ?>
+	
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<div class="featured-post">
@@ -17,11 +20,11 @@
 		<header class="entry-header">
 			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<h2 class="entry-title"><?php the_title(); ?></h2>
 			<?php else : ?>
-			<h1 class="entry-title">
+			<h2 class="entry-title">
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h1>
+			</h2>
 			<?php endif; // is_single() ?>
 			<?php if ( comments_open() ) : ?>
 				<div class="comments-link">

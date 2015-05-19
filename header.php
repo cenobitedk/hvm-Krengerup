@@ -41,9 +41,15 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 
-		<div class="lang-select">
-			<?php echo qtrans_generateLanguageSelectCode('both'); ?>
+		<div id="toggle-buttons" class="toggle-buttons">
+			<ul>
+				<li><a href="#" class="language entypo-globe"><?php _e('Language', 'twentytwelve'); ?></a></li>
+				<li><a href="#" class="menu entypo-menu"><?php _e('Menu', 'twentytwelve'); ?></a></li>
+				<li><a href="#" class="search entypo-search"><?php _e('Search', 'twentytwelve'); ?></a></li>
+			</ul>
 		</div>
+		
+		<?php twentytwelve_languages_list(); ?>
 
 		<?php get_search_form( TRUE ); ?>
 
@@ -56,7 +62,7 @@
 
 <div class="menu-wrapper">
 	<nav id="site-navigation" class="main-navigation" role="navigation">
-		<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
+		<!-- <h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3> -->
 		<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 	</nav><!-- #site-navigation -->
@@ -67,6 +73,7 @@
 
 		<? if (!is_front_page()) : ?>
 		<div id="submenu" class="">
+			<a href="#" class="toggler entypo-list"></a>
 		<?php 
 		wp_nav_menu( array(
 	  		'theme_location' => 'primary',

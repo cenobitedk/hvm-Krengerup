@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Twenty Twelve functions and definitions.
  *
@@ -21,6 +22,14 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+
+
+/**
+ * Requirements to detect dependencies.
+ *
+ */
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+require(get_template_directory() . '/qt-importer-redirects.php');
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
@@ -184,6 +193,46 @@ function twentytwelve_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
 
+
+/**
+ * Generate the language bar.
+ *
+ * @since hvm.dk 2.0
+ */
+function twentytwelve_languages_list(){
+    $qtranslate = is_plugin_active('qtranslate/qtranslate.php');
+    $wpml = is_plugin_active('sitepress-multilingual-cms/sitepress.php');
+	
+	if ($qtranslate || $wpml) {
+		echo '<div class="lang-select">';
+		if ($qtranslate) {
+			echo qtrans_generateLanguageSelectCode('both');
+		}
+		else if ($wpml) {
+			$languages = icl_get_languages('skip_missing=0&orderby=custom');
+    		if(!empty($languages)){
+				echo '<ul id="wpml_lang_sel_list">';
+				foreach($languages as $l){
+				    echo ($l['active'])? '<li class="active">' : '<li>';
+				    echo '<a href="'.$l['url'].'">';
+				    if($l['country_flag_url']){
+				        echo '<img src="'.$l['country_flag_url'].'" height="12" alt="'.$l['language_code'].'" width="18" />';
+				    }
+				    echo icl_disp_language($l['native_name']);
+			        echo '</a>';
+				    echo '</li>';
+				}
+				echo '</ul>';
+			}
+		}
+		echo '</div>';
+	}
+	else {
+		// do nothing
+	}
+}
+
+
 /**
  * Makes our wp_nav_menu() fallback -- wp_page_menu() -- show a home link.
  *
@@ -231,6 +280,38 @@ function twentytwelve_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+    // Register footer widgets
+    register_sidebar( array(
+        'name' => __( 'Footer Widget One', 'twentytwelve' ),
+        'id' => 'sidebar-4',
+        'description' => __( 'Found at the bottom of every page (except 404s and optional homepage template) Left Footer Widget.', 'twentytwelve' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+ 
+    register_sidebar( array(
+        'name' => __( 'Footer Widget Two', 'twentytwelve' ),
+        'id' => 'sidebar-5',
+        'description' => __( 'Found at the bottom of every page (except 404s and optional homepage template) Center Footer Widget.', 'twentytwelve' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => "</aside>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+ 
+    register_sidebar( array(
+        'name' => __( 'Footer Widget Three', 'twentytwelve' ),
+        'id' => 'sidebar-6',
+        'description' => __( 'Found at the bottom of every page (except 404s and optional homepage template) Right Footer Widget.', 'twentytwelve' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => "</aside>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+
 }
 add_action( 'widgets_init', 'twentytwelve_widgets_init' );
 
@@ -508,4 +589,13 @@ function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
     return $sorted_menu_items;
   }
 }
+
+
+function enable_more_buttons($buttons) {
+	$buttons[] = 'hr';
+  return $buttons;
+}
+add_filter("mce_buttons", "enable_more_buttons");
+//add_filter("mce_buttons_2", "enable_more_buttons"); // add to second row
+//add_filter("mce_buttons_3", "enable_more_buttons"); // add to third row
 

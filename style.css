@@ -923,10 +923,9 @@ img.aligncenter {
 }
 .entry-content table,
 .comment-content table {
-	border-bottom: 1px solid #ededed;
-	color: #757575;
-	font-size: 12px;
-	font-size: 0.857142857rem;
+	border-bottom: 0px solid #ffffff;
+	color: #636363;
+	font-size: 100%;
 	line-height: 2;
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
@@ -934,14 +933,13 @@ img.aligncenter {
 }
 .entry-content table caption,
 .comment-content table caption {
-	font-size: 16px;
-	font-size: 1.142857143rem;
+	font-size: 100%;
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
 }
 .entry-content td,
 .comment-content td {
-	border-top: 1px solid #ededed;
+	border-top: 0px solid #ededed;
 	padding: 6px 10px 6px 0;
 }
 .site-content article {
@@ -1725,4 +1723,3 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
-
