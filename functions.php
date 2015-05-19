@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Twenty Twelve functions and definitions.
  *
@@ -21,6 +22,14 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+
+
+/**
+ * Requirements to detect dependencies.
+ *
+ */
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+require(get_template_directory() . '/qt-importer-redirects.php');
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
@@ -183,6 +192,46 @@ function twentytwelve_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
+
+
+/**
+ * Generate the language bar.
+ *
+ * @since hvm.dk 2.0
+ */
+function twentytwelve_languages_list(){
+    $qtranslate = is_plugin_active('qtranslate/qtranslate.php');
+    $wpml = is_plugin_active('sitepress-multilingual-cms/sitepress.php');
+	
+	if ($qtranslate || $wpml) {
+		echo '<div class="lang-select">';
+		if ($qtranslate) {
+			echo qtrans_generateLanguageSelectCode('both');
+		}
+		else if ($wpml) {
+			$languages = icl_get_languages('skip_missing=0&orderby=custom');
+    		if(!empty($languages)){
+				echo '<ul id="wpml_lang_sel_list">';
+				foreach($languages as $l){
+				    echo ($l['active'])? '<li class="active">' : '<li>';
+				    echo '<a href="'.$l['url'].'">';
+				    if($l['country_flag_url']){
+				        echo '<img src="'.$l['country_flag_url'].'" height="12" alt="'.$l['language_code'].'" width="18" />';
+				    }
+				    echo icl_disp_language($l['native_name']);
+			        echo '</a>';
+				    echo '</li>';
+				}
+				echo '</ul>';
+			}
+		}
+		echo '</div>';
+	}
+	else {
+		// do nothing
+	}
+}
+
 
 /**
  * Makes our wp_nav_menu() fallback -- wp_page_menu() -- show a home link.

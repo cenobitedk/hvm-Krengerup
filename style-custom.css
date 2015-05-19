@@ -191,6 +191,7 @@ body .site {
 /* LANGUAGE
 /*****************************/
 
+/* Qtranslate */
 header .lang-select {
 	float: right;
 	font-size: 12px;
@@ -209,6 +210,10 @@ header .lang-select li a {
 	text-decoration: none;
 	color: #444;
 	opacity: 0.6;
+}
+header .lang-select li img {
+	margin-right: 3px;
+	margin-bottom: -2px;
 }
 header .lang-select li a:hover {
 	color: #000;
@@ -383,6 +388,14 @@ ul.submenu [class*="current"] > a {
 
 .widget-area .widget li {
 	margin-bottom: 25px;
+}
+
+.widget-area .widget li {
+	margin-bottom: 25px;
+}
+}
+.widget-area .widget_recent_entries li p {
+	padding-left: 0;
 }
 
 .widget-area .widget_recent_entries li strong:after {
@@ -982,6 +995,8 @@ footer[role="contentinfo"] > * {
 
 }
 
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
 	

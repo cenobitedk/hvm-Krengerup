@@ -53,9 +53,9 @@
 			</ul>
 		</div>
 		
-		<div class="lang-select">
-			<?php echo qtrans_generateLanguageSelectCode('both'); ?>
 		</div>
+		
+		<?php twentytwelve_languages_list(); ?>
 
 		<?php get_search_form( TRUE ); ?>
 
