@@ -225,7 +225,9 @@ function twentytwelve_languages_list(){
 				    if($l['country_flag_url']){
 				        echo '<img src="'.$l['country_flag_url'].'" height="12" alt="'.$l['language_code'].'" width="18" />';
 				    }
-				    echo icl_disp_language($l['native_name']);
+				    
+				    echo '<span lang="'.$l['language_code'].'">'.icl_disp_language($l['native_name']).'</span>';
+				    echo '<span class="language-code">'.$l['language_code'].'</span>';
 			        echo '</a>';
 				    echo '</li>';
 				}
