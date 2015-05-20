@@ -732,6 +732,9 @@ footer[role="contentinfo"] > * {
 	header .lang-select li.active a {
 		color: #eee;
 	}
+	.lang-select a .language-code {
+		display: none;
+	}
 
 
 	/*
