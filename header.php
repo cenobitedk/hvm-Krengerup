@@ -53,8 +53,6 @@
 			</ul>
 		</div>
 		
-		</div>
-		
 		<?php twentytwelve_languages_list(); ?>
 
 		<?php get_search_form( TRUE ); ?>
