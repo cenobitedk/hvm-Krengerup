@@ -29,7 +29,6 @@
  *
  */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-require(get_template_directory() . '/qt-importer-redirects.php');
 
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
