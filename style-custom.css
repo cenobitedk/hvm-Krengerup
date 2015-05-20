@@ -393,7 +393,7 @@ ul.submenu [class*="current"] > a {
 .widget-area .widget li {
 	margin-bottom: 25px;
 }
-}
+
 .widget-area .widget_recent_entries li p {
 	padding-left: 0;
 }
@@ -992,11 +992,9 @@ footer[role="contentinfo"] > * {
 		font-size: 90%;
 	}
 
-
 }
 
 
-@media screen and (min-width: 600px) and (max-width: 768px) {
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
 	
@@ -1016,6 +1014,11 @@ footer[role="contentinfo"] > * {
 	.template-front-page .widget-area .second .widget,
 	.template-front-page .widget-area .second .widget:nth-child(even) {
 		width: 50%;
+	}
+
+	.template-front-page .widget-area .widget-odd,
+	.template-front-page .widget-area .widget:nth-child(odd) {
+		clear: both;
 	}
 
 	.template-front-page .widget-area .first .widget.logo {
