@@ -503,6 +503,11 @@ ul.submenu [class*="current"] > a {
 /* first row
 /*****************************/
 
+.template-front-page #secondary .first .widget:first-child:last-child {
+  float: none;
+  width: 100%;
+}
+
 .template-front-page #secondary .first {
 	background: none;
 	background-color: transparent;
