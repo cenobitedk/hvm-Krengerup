@@ -476,6 +476,7 @@ ul.submenu [class*="current"] > a {
 	border: 1px solid #CCC;
 	border-radius: 3px;
 	padding: 60px 0 0;
+	position: relative;
 }
 
 .front-widgets article .fpw-page-title,
@@ -483,12 +484,13 @@ ul.submenu [class*="current"] > a {
 	margin: 0 !important;
 	background-color: white;
 	background-color: rgba(255,255,255,0.75);
+	position: relative;
 }
 
 
 .widget_fpw_widget .widget-title,
 .widget_fpw_widget .fpw-page-title {
-	padding: 10px 10px 0;
+	padding: 5px 10px 0;
 	border-top: 1px solid #ccc;
 }
 
@@ -546,17 +548,24 @@ ul.submenu [class*="current"] > a {
 	padding-left: 10px;
 }
 
-.template-front-page .widget-area .second .fpw-featured-image {
-	display: none;
-}
-
 .template-front-page .widget-area .second .widget,
 .template-front-page .widget-area .second .widget:nth-child(even) {
 	width: 25%;
 }
 
+.template-front-page .widget-area .second .fpw-featured-image {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	right: 0;
+}
+
 .template-front-page .widget-area .second img {
-	display: none;
+	width: auto;
+	max-width: initial !important;
+	min-height: 120%;
+	transform: translate(-50%, -15%);
 }
 
 .front-widgets .widget.nyheder article {
