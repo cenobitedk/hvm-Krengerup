@@ -490,7 +490,7 @@ ul.submenu [class*="current"] > a {
 
 .widget_fpw_widget .widget-title, 
 .widget_fpw_widget .fpw-page-title {
-	padding: 10px 10px 0;
+	padding: 5px 10px 0;
 	border-top: 1px solid #ccc;
 }
 
@@ -559,8 +559,8 @@ ul.submenu [class*="current"] > a {
 .template-front-page .widget-area .second img {
 	width: auto;
 	max-width: initial !important;
-	min-height: 100%;
-	transform: translateX(-50%);
+	min-height: 120%;
+	transform: translate(-50%, -15%);
 }
 
 .front-widgets .widget.nyheder article {
