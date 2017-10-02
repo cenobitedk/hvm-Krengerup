@@ -19,10 +19,9 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 
+<head>
 <link rel="Shortcut Icon" href="http://hvm-krengerup.dk/wp-content/uploads/2015/04/knude.ico">
 <link rel="icon" href="http://hvm-krengerup.dk/wp-content/uploads/2015/04/knude.ico" type="image/x-icon">
-
-<head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -51,7 +50,7 @@
 				<li><a href="#" class="search entypo-search"><?php _e('Search', 'twentytwelve'); ?></a></li>
 			</ul>
 		</div>
-		
+
 		<?php twentytwelve_languages_list(); ?>
 
 		<?php get_search_form( TRUE ); ?>
@@ -77,12 +76,12 @@
 		<? if (!is_front_page()) : ?>
 		<div id="submenu" class="">
 			<a href="#" class="toggler entypo-list"></a>
-		<?php 
+		<?php
 		wp_nav_menu( array(
 	  		'theme_location' => 'primary',
 	  		'sub_menu' => true,
 	  		'menu_class' => 'submenu'
-		)); 
+		));
 		?>
 		</div>
 		<?php endif; ?>
